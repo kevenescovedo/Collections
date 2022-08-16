@@ -1,6 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 
 public class MetodoList {
 
@@ -36,8 +38,39 @@ public class MetodoList {
 		for (Double nota : notas) {
 			System.out.println(nota);
 		}
+		// ver elemento que ta em uma posicao
 		
-
+        System.out.println(notas.get(2));
+        //ver o menor elemento de uma collection
+        System.out.println(Collections.min(notas));
+        //ver o maior elemento de uma collection
+        System.out.println(Collections.max(notas));
+        Iterator<Double> iterator = notas.iterator();
+        double soma = 0;
+        while(iterator.hasNext()) {
+        	
+        Double next =	iterator.next();
+        soma += next;
+        // acessar a quantidade de elementos
+        notas.size();
+        //remover a posicao 
+        notas.remove(0);
+        //remover nota objeto
+        notas.remove(10d);
+        //remover todos elementos menores que sete
+        Iterator<Double> it2 = notas.iterator();
+        while(it2.hasNext()) {
+        	Double n = it2.next();
+        	if(n < 7) it2.remove();
+        }
+        //remover todas as notas
+        notas.clear();
+        //verificar se lista esta vazio
+        notas.isEmpty();
+        
+        }
+        
+        
 	}
 
 }
