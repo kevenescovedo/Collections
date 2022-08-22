@@ -46,7 +46,7 @@ public class MetodoSet {
       	}
       }
      System.out.println(notas.toString());
-     //colocar list ordenada
+     //colocar list ordenada na ordem insercao
     Set<Double> notasOrdenada = new LinkedHashSet<Double>();
     notasOrdenada.add(7d);
     notasOrdenada.add(8.5);
@@ -56,6 +56,7 @@ public class MetodoSet {
     notasOrdenada.add(0.0);
     notasOrdenada.add(3.6);
     System.out.println(notasOrdenada);
+//ordem natural dos elementos
     Set<Double> crescente = new TreeSet<>();
     crescente.add(7d);
     crescente.add(8.5);
