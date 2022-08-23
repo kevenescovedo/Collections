@@ -11,7 +11,7 @@ public static void main(String[] args) {
 	Set<Serie> series = new HashSet<>(){{
 		add(new Serie("got","fantasia",60));
 		add(new Serie("Dark","drama",60));
-		add(new Serie("That, 70 show","",25));
+		add(new Serie("That, 70 show","Comédia",25));
 		
 	}};
 	
@@ -44,6 +44,15 @@ public static void main(String[] args) {
 	for (Serie serie: series4) {
 		System.out.println(serie.getNome() + " " + serie.getGenero() + " " + serie.getTempoEpisodeo());
 	}
+	Set<Serie> serie5 = new TreeSet<>(new ComparetorGenero() );
+	serie5.addAll(series);
+	System.out.println("  ");
+	//ordem por genêro
+	for (Serie serie: serie5) {
+		System.out.println(serie.getNome() + " " + serie.getGenero() + " " + serie.getTempoEpisodeo());
+	}
+	
+	
 
 }
 }
@@ -116,8 +125,17 @@ class ComperatorNomeGeneroTempoEpisodeo implements Comparator<Serie> {
 		if(genero != 0) return genero;
 		return Integer.compare(s1.getTempoEpisodeo(), s2.getTempoEpisodeo());
 	}
+	
+	
+	
+}
+class ComparetorGenero implements Comparator<Serie> {
 
-	
-	
+	@Override
+	public int compare(Serie s1, Serie s2) {
+		// TODO Auto-generated method stub
+		return s1.getGenero().compareToIgnoreCase(s2.getGenero());
+		
+	}
 	
 }
